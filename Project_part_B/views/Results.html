@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results Page</title>
+    <link rel="icon" href="../static/Images/icon.png">
+    <link href="../static/CSS/CssSheet.css" rel="stylesheet" />
+    <script defer src="../static/JS/JavaScript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="page_header">
+            <img src="../static/Images/Logo.jpg" class="top-line-left" alt="Logo" />
+            <h1 class="top-line-center">BeautySOS</h1>
+            <a href="../views/HomePage.html" class="top-line-right">Logout</a>
+            <nav>
+                <ul>
+                    <li><a href="../views/HomePage.html" class="navline">Home Page</a></li>
+                    <li><a href="../views/MyProfile.html" class="navline">My Profile</a></li>
+                    <li><a href="../views/FindAppointment.html" class="navline">Find Appointment</a></li>
+                    <li><a href="../views/AboutUs.html" class="navline">About Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="website_description">
+            <h3 id="typing">What I Found For You..</h3>
+        </div>
+        <div class="content_wrap2">
+            <div class="item4">
+                <table id="resultsTable">
+                    <colgroup>
+                        <col span="7">
+                    </colgroup>
+                    <tr>
+                        <th>Name of Salon</th>
+                        <th>Address</th>
+                        <th>Distance From Current Location</th>
+                        <th>Type of Service</th>
+                        <th>Available Appoitments</th>
+                        <th>Price</th>
+                        <th>Contact Number</th>
+                    </tr>
+                    <tr>
+                        <td>NailsNailsNails</td>
+                        <td>Gruzenberg 26, Tel Aviv</td>
+                        <td>1.7 km</td>
+                        <td>Manicure</td>
+                        <td>9:00, 9:45</td>
+                        <td>90 NIS</td>
+                        <td>+972547532144</td>
+                    </tr>
+                    <tr>
+                        <td>Roni's Beauty Salon</td>
+                        <td>Frishman 57, Tel Aviv</td>
+                        <td>350 m</td>
+                        <td>Manicure</td>
+                        <td>11:00, 13:30</td>
+                        <td>70 NIS</td>
+                        <td>+972547696654</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="item5">
+                <iframe id="Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.0899294333494!2d34.77309648425918!3d32.06681632716208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4c8307447f1d%3A0xc0d397816fb4e358!2z15LXqNeV15bXoNeR16jXkiAyNiwg16rXnCDXkNeR15nXkQ!5e0!3m2!1siw!2sil!4v1670967841848!5m2!1siw!2sil" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+        <footer>
+            <span class="find">You Can Find Us on Social Media!</span>
+            <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank" id="social_media_button"></a>
+            <a href="https://twitter.com/i/flow/login" class="fa fa-twitter" target="_blank"></a>
+            <a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram" target="_blank"></a>
+            <span><a href="mailto:BeautySOS@gmail.com">BeautySOS@gmail.com </a></span>
+        </footer>
+    </div>
+</body>
+
+</html>
