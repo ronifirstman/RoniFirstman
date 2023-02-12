@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="icon" href="Images/icon.png">
+    <link href="CSS/CssSheet.css" rel="stylesheet" />
+    <script defer src="JS/JavaScript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="page_header">
+        <img src="Images/Logo.jpg" class="top-line-left" id="LogoAnimation" alt="Logo" />
+        <h1 class="top-line-center">BeautySOS</h1>
+        <a href="http://localhost:8000/Login" class="top-line-right">Login</a>
+        <nav>
+            <ul>
+                <li><a href="http://localhost:8000/Home" class="navline">Home Page</a></li>
+                <li><a href="http://localhost:8000/MyProfile" class="navline">My Profile</a></li>
+                <li><a href="http://localhost:8000/FindAppointment" class="navline">Find Appointment</a></li>
+                <li><a href="http://localhost:8000/AboutUs" class="navline">About Us</a></li>                                                            
+            </ul>                
+        </nav>
+    </header>
+    <div class="website_description">
+        <h3 id="typing">Login To Use Our Services:</h3>
+        <form name="LoginForm" class="login" action="/Login" method="post">
+            <label for="email"></label><br />
+            <input type="email" id="email" name="email" placeholder="Email" required /><br />
+            <label for="password"></label><br />
+            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password"
+                   title="Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit and 8 digits or more" required /><br /><br />
+            <input type="submit" class="submit" value="Login"><br><br>
+        </form>
+    </div>
+    <footer class="page_footer">
+        <span class="find">You Can Find Us on Social Media!</span>
+        <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank" id="social_media_button"></a>
+        <a href="https://twitter.com/i/flow/login" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram" target="_blank"></a>
+        <span><a href="mailto:BeautySOS@gmail.com">BeautySOS@gmail.com </a></span>
+    </footer>
+</body>
+</html>

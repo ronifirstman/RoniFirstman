@@ -1,0 +1,54 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{Title}
+        link(rel="icon", href="Images/icon.png")
+        link(href="CSS/CssSheet.css", rel="stylesheet")
+        script(defer src="JS/JavaScript.js")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    body
+        if user_login === false
+            header(class="page_header")
+            img(src="Images/Logo.jpg", id="LogoAnimation", alt="Logo" class="top-line-left")
+            h1(class="top-line-center") BeautySOS
+            a(href="http://localhost:8000/Login" class="top-line-right") Login
+            nav
+                ul
+                    li
+                        a(href="http://localhost:8000/Home" class="navline") Home Page
+                    li
+                        a(href="http://localhost:8000/MyProfile" class="navline") My Profile
+                    li
+                        a(href="http://localhost:8000/FindAppointment" class="navline") Find Appointment
+                    li
+                        a(href="http://localhost:8000/AboutUs" class="navline") About Us
+        else 
+            header(class="page_header")
+                img(src="Images/Logo.jpg", id="LogoAnimation", alt="Logo" class="top-line-left")
+                h1(class="top-line-center") BeautySOS
+                a(href="http://localhost:8000/Logout" class="top-line-right") Logout
+                nav
+                    ul
+                        li
+                            a(href="http://localhost:8000/Home" class="navline") Home Page
+                        li
+                            a(href="http://localhost:8000/MyProfile" class="navline") My Profile
+                        li
+                            a(href="http://localhost:8000/FindAppointment" class="navline") Find Appointment
+                        li
+                            a(href="http://localhost:8000/AboutUs" class="navline") About Us     
+    main
+        h3(id="typing") #{PageTitle}
+        div(class="website_description")        
+            block content
+    
+    footer(class="page_footer")
+        span(class="find") You Can Find Us on Social Media!
+        a(href="https://www.facebook.com/", target="_blank", id="social_media_button" class="fa fa-facebook")
+        a(href="https://twitter.com/i/flow/login", target="_blank" class="fa fa-twitter")
+        a(href="https://www.instagram.com/accounts/login/", target="_blank" class="fa fa-instagram")
+        span
+            a(href="mailto:BeautySOS@gmail.com") BeautySOS@gmail.com

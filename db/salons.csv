@@ -1,0 +1,11 @@
+salonID,Salon_Name,address,contact_number,type_of_service,price,date,appointment_time
+1,Ronis Beauty Salon,Frishman 50,525381648,manicure,100,2023-02-20,9:00:00
+2,Ronis Beauty Salon,Frishman 50,525381648,padicure,110,2023-02-21,10:00:00
+3,Ronis Beauty Salon,Frishman 50,525381648,eyebrow shaping,80,2023-02-22,11:00:00
+4,NailsNailsNails,Bugrashov 12,547896312,manicure,120,2023-02-23,12:00:00
+5,NailsNailsNails,Bugrashov 12,547896312,padicure,130,2023-02-24,13:00:00
+6,NailsNailsNails,Bugrashov 12,547896312,eyebrow shaping,60,2023-02-25,14:00:00
+7,Yulia,King George 10,547586165,manicure,150,2023-02-26,15:00:00
+8,Yulia,King George 10,547586165,padicure,160,2023-02-27,16:00:00
+9,Yulia,King George 10,547586165,eyebrow shaping,90,2023-02-28,17:00:00
+10,Yulia,King George 10,547586165,eyelash lifting,210,2023-03-01,18:00:00

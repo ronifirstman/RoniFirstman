@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Me an Appointment</title>
+    <link rel="icon" href="Images/icon.png">
+    <link href="CSS/CssSheet.css" rel="stylesheet" />
+    <script defer src="JS/JavaScript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="page_header">
+        <img src="Images/Logo.jpg" class="top-line-left" alt="Logo" />
+        <h1 class="top-line-center">BeautySOS</h1>
+        <a href="http://localhost:8000/Home" class="top-line-right">Logout</a>
+        <nav>
+            <ul>
+                <li><a href="http://localhost:8000/Home" class="navline">Home Page</a></li>
+                <li><a href="http://localhost:8000/MyProfile" class="navline">My Profile</a></li>
+                <li><a href="http://localhost:8000/FindAppointment" class="navline">Find Appointment</a></li>
+                <li><a href="http://localhost:8000/AboutUs" class="navline">About Us</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <div class="website_description">
+        <h3 id="typing">Find me an appoitment..</h3>
+        <form action="http://localhost:8000/Results" onsubmit="return success_find()" method="post">
+            <label for="type_of_service">Type of Service</label><br><br />
+            <select name="type_of_service" id="type_of_service" required>
+                <option value="" disabled selected hidden>Please Choose..</option>
+                <option value="Manicure">Manicure</option>
+                <option value="Padicure">Padicure</option>
+                <option value="Eyebrow Shaping">Eyebrow Shaping</option>
+                <option value="Hair Removal">Hair Removal</option>
+                <option value="Eyelash Lifting">Eyelash Lifting</option>
+            </select><br /><br />
+            <label for="max_price">Max Price</label><br><br />
+            <input type="number" id="max_price" name="max_price" placeholder="130" required /><br />
+            <p id="priceError"></p>
+            <label for="date_of_service">Date of Service</label><br><br />
+            <input type="date" id="date_of_service" name="date_of_service" required /><br />
+            <p id="dateError"></p>
+            <label for="time_of_service_start">Time of Service - Start</label><br><br />
+            <input type="time" id="time_of_service_start" name="time_of_service_start" required /><br /><br />
+            <p id="timeError"></p>
+            <label for="time_of_service_end">Time of Service - End</label><br><br />
+            <input type="time" id="time_of_service_end" name="time_of_service_end" required /><br /><br />
+            <p id="timeError"></p>
+            <label for="max_distance">Max Distance</label><br><br />
+            <select name="max_distance" id="max_distance" required>
+                <option value="" disabled selected hidden>Please Choose..</option>
+                <option value="500 m">500 m</option>
+                <option value="1 km">1 km</option>
+                <option value="1.5 km">1.5 km</option>
+                <option value="2 km">2 km</option>
+                <option value="2.5 km">2.5 km</option>
+            </select><br /><br />
+            <input type="checkbox" id="allow_use_location" name="allow_use_location" required />
+            <label for="allow_use_location">I allow BeautySOS to use my current location</label><br /><br />
+            <button type="submit" class="submit" onclick="checkMaxPrice(), checkDate(), checkTime()">Search</button><br><br>
+        </form>
+    </div>
+    <footer class="page_footer">
+        <span class="find">You Can Find Us on Social Media!</span>
+        <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank" id="social_media_button"></a>
+        <a href="https://twitter.com/i/flow/login" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram" target="_blank"></a>
+        <span><a href="mailto:BeautySOS@gmail.com">BeautySOS@gmail.com </a></span>
+    </footer>
+</body>
+</html>

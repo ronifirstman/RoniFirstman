@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+    <link rel="icon" href="Images/icon.png">
+    <link href="CSS/CssSheet.css" rel="stylesheet" />
+    <script defer src="JS/JavaScript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="page_header">
+        <img src="Images/Logo.jpg" class="top-line-left" alt="Logo" />
+        <h1 class="top-line-center">BeautySOS</h1>
+        <a href="http://localhost:8000/Home" class="top-line-right">Logout</a>
+        <nav>
+            <ul>
+                <li><a href="http://localhost:8000/Home" class="navline">Home Page</a></li>
+                <li><a href="http://localhost:8000/MyProfile" class="navline">My Profile</a></li>
+                <li><a href="http://localhost:8000/FindAppointment" class="navline">Find Appointment</a></li>
+                <li><a href="http://localhost:8000/AboutUs" class="navline">About Us</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <div class="website_description">
+        <h3 id="typing">My Profile</h3>
+    </div>
+    <div class="content_wrap">
+        <div class="item1">
+            <h3>Update Personal Information</h3>
+            <form class="update_info" id="update_form" action="http://localhost:8000/MyProfile" onsubmit="return success_update()" method="post">
+                <label for="first_name">First Name:</label><br />
+                <input type="text" id="first_name" name="first_name" value="Roni" required /><br />
+                <p id="firstnameError"></p>
+                <label for="last_name">Last Name:</label><br />
+                <input type="text" id="last_name" name="last_name" value="Firstman" required /><br />
+                <p id="lastnameError"></p>
+                <label for="email">Email:</label><br />
+                <input type="email" id="email" name="email" placeholder="roni@gmail.com" style="background-color: lightgray;" readonly /><br /><br />
+                <label for="phone_number">Phone Number:</label><br />
+                <input type="tel" id="phone_number" name="phone_number" value="0547696066" pattern="[0-9]{10}" required /><br />
+                <p id="phoneError"></p>
+                <label for="address">Address:</label><br />
+                <input type="text" id="address" name="address" value="Frishman 66" /><br />
+                <p id="addressError"></p>
+                <label for="age">Age:</label><br />
+                <input type="text" id="age" name="age" value="26" /><br />
+                <p id="ageError"></p>
+                <label for="password">New Password:</label><br />
+                <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" value=""
+                       title="Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit and 8 digits or more" required/><br /><br />
+                <button type="submit" class="submit" id="update_button" onclick="checkFullName(), checkPhoneNumber(), checkAdress(), checkAge()">Update User</button><br><br>
+            </form>
+        </div>
+        <div class="item2">
+            <h3>My Ratings</h3>
+            <table id="resultsTable">
+                <colgroup>
+                    <col span="3">
+                </colgroup>
+                <tr>
+                    <th>Name of Salon</th>
+                    <th>Type of Service</th>
+                    <th>Rating</th>
+                </tr>
+                <tr>
+                    <td>NailsNailsNails</td>
+                    <td>Manicure</td>
+                    <td>3.5</td>
+                </tr>
+                <tr>
+                    <td>Roni's Beauty Salon</td>
+                    <td>Padicure</td>
+                    <td>5</td>
+                </tr>
+            </table>
+        </div>
+        <div class="item6">
+            <h3>Users Ratings</h3>
+            <table id="resultsTable">
+                <colgroup>
+                    <col span="3">
+                </colgroup>
+                <tr>
+                    <th>Name of Salon</th>
+                    <th>Type of Service</th>
+                    <th>Rating</th>
+                </tr>
+                <tr>
+                    <td>NailsNailsNails</td>
+                    <td>Manicure</td>
+                    <td>4.6</td>
+                </tr>
+                <tr>
+                    <td>Roni's Beauty Salon</td>
+                    <td>Padicure</td>
+                    <td>3.2</td>
+                </tr>
+                <tr>
+                    <td>Yulia</td>
+                    <td>Hair Removal</td>
+                    <td>2.3</td>
+                </tr>
+            </table>
+        </div>
+        <div class="item3">
+            <h3>Add Rating</h3>
+            <form id="add_form" action="http://localhost:8000/MyProfile">
+                <label for="Salon_Name">Salon Name</label><br>
+                <select name="Salon_Name" id="Salon_Name" required>
+                    <option value="" disabled selected hidden>Please Choose..</option>
+                    <option value="Ronis Beauty Salon">Ronis Beauty Salon</option>
+                    <option value="NailsNailsNails">NailsNailsNails</option>
+                    <option value="Yulia">Yulia</option>
+                </select><br /><br>
+                <label for="type_of_service">Type of Service</label><br>
+                <select name="type_of_service" id="type_of_service" required>
+                    <option value="" disabled selected hidden>Please Choose..</option>
+                    <option value="Manicure">Manicure</option>
+                    <option value="Padicure">Padicure</option>
+                    <option value="Hair Removal">Hair Removal</option>
+                </select><br /><br>
+                <label for="ratings">Rating</label><br>
+                <select name="ratings" id="ratings" required>
+                    <option value="" disabled selected hidden>Please Choose..</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select><br /><br>
+                <button type="submit" class="submit" id="add_rating_button">Submit</button><br><br>
+            </form>
+        </div>
+    </div>
+    <footer class="page_footer">
+        <span class="find">You Can Find Us on Social Media!</span>
+        <a href="https://www.facebook.com/" class="fa fa-facebook" target="_blank" id="social_media_button"></a>
+        <a href="https://twitter.com/i/flow/login" class="fa fa-twitter" target="_blank"></a>
+        <a href="https://www.instagram.com/accounts/login/" class="fa fa-instagram" target="_blank"></a>
+        <span><a href="mailto:BeautySOS@gmail.com">BeautySOS@gmail.com </a></span>
+    </footer>
+</body>
+</html>
