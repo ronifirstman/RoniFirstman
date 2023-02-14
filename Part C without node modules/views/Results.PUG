@@ -1,0 +1,27 @@
+extends MainLayout
+block content
+  div(class="content_wrap2")
+      div(class="item4")
+          table(id="resultsTable")
+                thead
+                    tr
+                        td Name of Salon
+                        td Address
+                        td Contact Number
+                        td Type of Service
+                        td Price
+                        td Available Appointment - Date
+                        td Available Appointment - Time
+                        td Show on Map
+                tbody
+                each appointment in appointment_list
+                    tr
+                        td= appointment.Salon_Name 
+                        td= appointment.address
+                        td= appointment.contact_number
+                        td= appointment.type_of_service
+                        td= appointment.price
+                        td= appointment.date
+                        td= appointment.appointment_time
+                        td
+                            iframe(src=appointment.map_link, width='500' height='600' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade')

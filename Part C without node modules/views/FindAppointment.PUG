@@ -1,0 +1,47 @@
+extends MainLayout
+block content
+    if message
+        p #{message}
+    section(class="find_appointment_page")
+        form(action='/FindAppointment', onsubmit='return success_find()', method='post')
+            label(for='type_of_service') Type of Service
+            br
+            br
+            select(name='type_of_service', id="type_of_service" required)
+                option(value, disabled, selected, hidden) Please Choose..
+                option(value='Manicure') Manicure
+                option(value='Padicure') Padicure
+                option(value='Eyebrow Shaping') Eyebrow Shaping
+                option(value='Hair Removal') Hair Removal
+                option(value='Eyelash Lifting') Eyelash Lifting
+            br
+            br
+            label(for='max_price') Max Price
+            br
+            br
+            input(type='number', name='max_price', placeholder='130', id="max_price", required)
+            br
+            p(id="priceError")
+            label(for='date_of_service') Date of Service
+            br
+            br
+            input(type='date', name='date_of_service', id="date_of_service", required)
+            br
+            p(id="dateError")
+            label(for='time_of_service_start') Time of Service - Start
+            br
+            br
+            input(type='time', name='time_of_service_start', id="time_of_service_start", required)
+            br
+            br
+            p(id="timeError")
+            label(for='time_of_service_end') Time of Service - End
+            br
+            br
+            input(type='time', name='time_of_service_end', id="time_of_service_end", required)
+            br
+            br
+            p(id="timeError")
+            button(type='submit', onclick='checkMaxPrice(), checkDate(), checkTime()', class="submit") Search
+            br
+            br

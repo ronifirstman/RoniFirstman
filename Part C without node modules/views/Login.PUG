@@ -1,0 +1,17 @@
+extends MainLayout
+block content
+    if message
+        p #{message}
+    form(name="LoginForm" class="login" action="/LoginData" method="post")
+        label(for="email")
+        br
+        input(type="email", id="email", name="email", value=user_email || '',placeholder="Email", required)
+        p(style="font-weight: bold;") #{email_error || ''}
+        br
+        label(for="password")
+        br
+        input(type="password", id="password", name="password", placeholder="Password", title="Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit and 8 digits or more", required)
+        p(style="font-weight: bold;") #{password_error || ''}
+        br
+        input(type="submit" class="submit" value="Login")
+        br

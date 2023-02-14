@@ -1,0 +1,112 @@
+extends MainLayout
+block content
+    div(class="content_wrap")
+        div(class="item1")
+            h3 Update Personal Information
+            form(action='/UpdateProfile', onsubmit='return success_update()', method='post', class="update_info", id="update_form")
+                label(for='first_name') First Name:
+                br
+                input(type='text', id="first_name", name='first_name', value=userDetails.first_name, required)
+                br
+                p(id="firstnameError")
+                label(for='last_name') Last Name:
+                br
+                input(type='text', name='last_name', id="last_name", value=userDetails.last_name, required)
+                br
+                p(id="lastnameError")
+                label(for='email') Email:
+                br
+                input(type='email', name='email', id="email", value=userDetails.email, style='background-color: lightgray;', readonly)
+                br
+                br
+                label(for='phone_number') Phone Number:
+                br
+                input(type='tel', name='phone_number', id="phone_number",value=userDetails.phone_number, pattern='[0-9]{10}', required)
+                br
+                p(id="phoneError")
+                label(for='address') Address:
+                br
+                input(type='text', name='address', id="address" value=userDetails.address)
+                br
+                p(id="addressError")
+                label(for='age') Age:
+                br
+                input(type='text', name='age', id="age", value=userDetails.age)
+                br
+                p(id="ageError")
+                label(for='password') New Password:
+                br
+                input(type='password', name='password',id="password", title='Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 digit and 8 digits or more', required)
+                br
+                br
+                button(type='submit', class="submit", id="update_button" onclick='checkFullName(), checkPhoneNumber(), checkAdress(), checkAge()') Update User
+                br
+                br
+        div(class="item2")
+            h3 My Ratings
+            table(id="resultsTable")
+                thead
+                    tr
+                        td
+                        td Name of Salon
+                        td Type of Service
+                        td Ratings
+                tbody
+                each rating in myRatings
+                    tr
+                        td 
+                            a(href="/removeRating/"+rating.Salon_Name, class="fa fa-trash", title="Delete Rating")
+                        td= rating.Salon_Name 
+                        td= rating.type_of_service
+                        td= rating.ratings
+        div(class="item6")
+            h3 Users Ratings
+            table(id="resultsTable")
+                thead
+                    tr
+                        td Name of Salon
+                        td Type of Service
+                        td Ratings
+                tbody
+                each rating1 in userRatings
+                    tr
+                        td= rating1.Salon_Name 
+                        td= rating1.type_of_service
+                        td= rating1.ratings
+
+        div(class="item3")
+            h3 Add Rating
+            form(action='/addRating', id="add_form", method='post')
+                label(for='Salon_Name') Salon Name
+                br
+                select(name='Salon_Name', id="Salon_Name",required)
+                    each salon in salons
+                        option(value, disabled, selected, hidden) Please Choose..
+                        option(value=salon.Salon_Name) #{salon.Salon_Name}
+                br
+                br
+                label(for='type_of_service') Type of Service
+                br
+                select(name='type_of_service', id="type_of_service", required)
+                    option(value, disabled, selected, hidden) Please Choose..
+                    option(value='Manicure') Manicure
+                    option(value='Padicure') Padicure
+                    option(value='Hair Removal') Hair Removal
+                    option(value='Eyelash Lifting') Eyelash Lifting
+                    option(value='Eyebrow Shaping') Eyebrow Shaping
+                br
+                br
+                label(for='ratings') Rating
+                br
+                select(name='ratings', id="ratings", required)
+                    option(value, disabled, selected, hidden) Please Choose..
+                    option(value='1') 1
+                    option(value='2') 2
+                    option(value='3') 3
+                    option(value='4') 4
+                    option(value='5') 5
+                br
+                br
+                button(type='submit', class="submit", id="add_rating_button") Submit
+                br
+                br
